@@ -46,3 +46,22 @@ const myIncludes = (arr, item, from = 0) => {
   }
   return false;
 };
+
+//objects practice
+const objectToSum = (obj) => {
+  let sum = 0;
+  const keys = Object.keys(obj);
+  keys.forEach((key) => {
+    if (typeof obj[key] === "number") sum += obj[key];
+  });
+  return sum;
+};
+
+const objectToArray = (obj) => {
+  let result = [];
+  const keys = Object.keys(obj);
+  keys.forEach((key) => {
+    if (typeof obj[key] === "number") result.push(key);
+  });
+  return result.sort((a, b) => obj[b] - obj[a]);
+};
