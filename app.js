@@ -93,3 +93,17 @@ const truncateString = (str, maxLength) => {
 const isSubstring = (str1, str2) => {
   return str1.includes(str2) || str2.includes(str1);
 };
+
+//simple calculate
+const operations = {
+  addition: (a, b) => a + b,
+  subtraction: (a, b) => a - b,
+  multiply: (a, b) => a * b,
+  division: (a, b) => a / b,
+};
+const selectedOperation = "division";
+
+const simpleCalculate = (a, b, calcFunction) => {
+  return calcFunction(a, b);
+};
+console.log(simpleCalculate(10, 2, operations[selectedOperation])); // 5
