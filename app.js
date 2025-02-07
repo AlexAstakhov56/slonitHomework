@@ -19,3 +19,30 @@ const secretNumberGame = (left, right) => {
 };
 
 secretNumberGame(1, 100);
+
+// custom array functions
+const mySlice = (arr, start = 0, end = arr.length) => {
+  const result = [];
+  for (let i = start; i < end && i < arr.length; i++) {
+    result.push(arr[i]);
+  }
+  return result;
+};
+
+const myIndexOf = (arr, item, from = 0) => {
+  for (let i = from; i < arr.length; i++) {
+    if (arr[i] === item) {
+      return i;
+    }
+  }
+  return -1;
+};
+
+const myIncludes = (arr, item, from = 0) => {
+  for (let i = from; i < arr.length; i++) {
+    if (arr[i] === item) {
+      return true;
+    }
+  }
+  return false;
+};
