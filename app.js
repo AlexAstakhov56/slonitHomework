@@ -107,3 +107,16 @@ const simpleCalculate = (a, b, calcFunction) => {
   return calcFunction(a, b);
 };
 console.log(simpleCalculate(10, 2, operations[selectedOperation])); // 5
+
+//myFilter
+function myFilter(array, callback) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i])) result.push(array[i]);
+  }
+  return result;
+}
+const numbers = [1, 2, 3, 4, 5];
+
+const greaterThanThree = myFilter(numbers, (num) => num > 3);
+console.log(greaterThanThree); // [4, 5]
