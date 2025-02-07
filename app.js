@@ -120,3 +120,20 @@ const numbers = [1, 2, 3, 4, 5];
 
 const greaterThanThree = myFilter(numbers, (num) => num > 3);
 console.log(greaterThanThree); // [4, 5]
+
+//closure practice
+const createLogger=()=> {
+  const logs = [];
+  return {
+    log:(message)=>{
+      logs.push(message)
+    },
+    getLogs:()=>{
+      console.log(logs)
+    }
+  }
+}
+
+const createRandomGenerator = (min, max) => {
+  return () => Math.floor(Math.random() * (max - min + 1)) + min;
+};
