@@ -65,3 +65,31 @@ const objectToArray = (obj) => {
   });
   return result.sort((a, b) => obj[b] - obj[a]);
 };
+
+//string practice
+const capitalizeFirstLetter = (str) => {
+  if (str.length === 0) return;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+const truncateString = (str, maxLength) => {
+  if (str.length <= maxLength) return str;
+
+  let truncatedStr = str.slice(0, maxLength);
+
+  const lastIndex = Math.max(
+    truncatedStr.lastIndexOf(" "),
+    truncatedStr.lastIndexOf(","),
+    truncatedStr.lastIndexOf("."),
+    truncatedStr.lastIndexOf("!"),
+    truncatedStr.lastIndexOf("?"),
+    truncatedStr.lastIndexOf(":"),
+    truncatedStr.lastIndexOf(";")
+  );
+
+  return truncateString.slice(0, lastIndex) + "...";
+};
+
+const isSubstring = (str1, str2) => {
+  return str1.includes(str2) || str2.includes(str1);
+};
